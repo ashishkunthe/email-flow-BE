@@ -12,10 +12,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/api", emailRoutes);
-// Define the email sending job
+
 sendEmailJob(agenda);
 
-// Start agenda
 (async function () {
   await agenda.start();
   console.log("✅ Agenda started");
